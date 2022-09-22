@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400&display=swap" rel="stylesheet" />
+    <title>Discount Codes</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Tajawal;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+        }
+
+        .nav {
+            width: 100%;
+            height: 70px;
+            background-color: brown;
+        }
+
+        .content {
+            height: 70vh;
+            min-height: 700px;
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        .center-txt{
+            text-align: center;
+        }
+        .code-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: green;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            
+        }
+        .code-btn :hover{
+            background-color:rgb(25, 207, 25) ;
+        }
+        .img-code{
+            object-fit: contain;
+            height:70px;
+        }
+    </style>
+
+    <div class="container">
+        <nav class="nav"></nav>
+        <div class="content">
+            <div class="col">
+                <img class="img-code" src="./code-non.png" />
+                <h1>كود خصم نون</h1>
+                <h3 class="center-txt">
+                    كوبون خصم نون خصم إضافي يصل حتى 10% على جميع المنتجات انسخ
+                    الكوبون واحصل على العرض
+                </h3>
+                <p>⬇️ اضغط هنا لنسخ الكود  ⬇️</p>
+                <input type="text"  style="visibility: hidden" value="Hno" id="myInput">
+
+                <div class="code-btn" onclick="myFunction()">انسخ الكود وتسوق الان</div>
+            </div>
+        </div>
+
+        <footer class="nav"></footer>
+    </div>
+</body>
+<script>
+    function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      
+      /* Alert the copied text */
+      alert("تم نسخ الكوبون  " + copyText.value);
+    //   location.href ="/thanks.html"
+      window.location.replace("thanks.html");
+    }
+    </script>
+    
+
+</html>
